@@ -1,4 +1,4 @@
-package main
+package getopt
 
 import (
 	"errors"
@@ -8,33 +8,6 @@ import (
 	"strconv"
 	"strings"
 )
-
-func main() {
-	var (
-		msg     string
-		x, y, z bool
-		// addArg  []string
-	)
-
-	a := New(os.Args[1:])
-
-	a.BoolVar(&x, "-x", "--xxx")
-	a.BoolVar(&y, "-y", "--yyy")
-	a.BoolVar(&z, "-z", "--zzz")
-	a.StringVar(&msg, "-m", "--msg")
-	dir := a.String("-d", "--dir")
-
-	non := a.Parse()
-
-	fmt.Println("x", x)
-	fmt.Println("y", y)
-	fmt.Println("z", z)
-
-	fmt.Println("msg", msg)
-	fmt.Println("dir", *dir)
-
-	fmt.Println(non)
-}
 
 type option struct {
 	optionShort, optionLong string

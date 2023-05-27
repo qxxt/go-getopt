@@ -1,3 +1,3 @@
-module  github.com/qxxt/go-getopt
+module github.com/qxxt/go-getopt
 
 go 1.19
